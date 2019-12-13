@@ -6,12 +6,14 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Login',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return Container(
+      child: MaterialApp(
+        title: 'Flutter Login',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: LoginPage(),
       ),
-      home: LoginPage(),
     );
   }
 }

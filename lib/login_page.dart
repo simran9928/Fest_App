@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
+import 'profile_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -33,7 +33,8 @@ class _LoginPageState extends State<LoginPage> {
 Widget _signInButton(String buttonName, Function method) {
     return RaisedButton(
       splashColor: Colors.red,
-      onPressed: () { method();},
+      onPressed: () { method();
+      Navigator.push(context, MaterialPageRoute(builder: (context){ return ProfilePage();}));},
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       highlightElevation: 0,
       child: Padding(
@@ -64,6 +65,10 @@ void signInWithfacebook(){}
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
+String email_id;
+String username;
+String photoUrl;
+
 
 Future<String> signInWithGoogle() async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
@@ -83,9 +88,15 @@ Future<String> signInWithGoogle() async {
 
   final FirebaseUser currentUser = await _auth.currentUser();
   assert(user.uid == currentUser.uid);
+  assert(user.displayName==currentUser.displayName);
+  assert(user.email==currentUser.email);
+  assert(user.photoUrl==currentUser.photoUrl);
+  
+  username=user.displayName;
+  email_id=user.email;
+  photoUrl = user.photoUrl;
 
   return 'signInWithGoogle succeeded: $user';
-
 }
 
 void signOutGoogle() async{
