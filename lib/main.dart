@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import './views/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Login',
         theme: ThemeData(
           primarySwatch: Colors.blue,
