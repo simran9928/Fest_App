@@ -24,3 +24,17 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+assets:
+  - assets/g.jpeg
+
+fonts:
+     - family: BalooBhai-Regular
+       fonts:
+         - asset: fonts/BalooBhai-Regular.ttf
+     - family: Rubik-Bold
+       fonts:
+         - asset: fonts/Rubik-Bold.ttf
+     - family: Rubik-Regular
+       fonts:
+         - asset: fonts/Rubik-Regular.ttf

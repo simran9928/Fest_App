@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'login_page.dart';
+import 'package:festappp/events/sections.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -111,7 +112,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   RaisedButton(
                     color: Colors.blueAccent,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){return Sections();}));
+                    },
                     child: Text(
                       "Update Profile",
                       style: TextStyle(color: Colors.white),
