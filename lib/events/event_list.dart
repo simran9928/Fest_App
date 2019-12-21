@@ -25,7 +25,7 @@ void each_event(){
     const SliverAppBar(
       pinned: true,
       expandedHeight: 300.0,
-      backgroundColor: Colors.lime,
+      backgroundColor: Color(0xFFFFE082),
       flexibleSpace: FlexibleSpaceBar(
         title: Text('Type of Event'),
       ),

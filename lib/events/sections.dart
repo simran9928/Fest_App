@@ -45,7 +45,7 @@ class _SectionsState extends State<Sections> {
               fontWeight: FontWeight.bold,
               fontSize: 40.0,
               fontFamily:"BalooBhai-Regular", 
-              color: Colors.white,
+              color: Colors.black,
             ),
             )
           ),

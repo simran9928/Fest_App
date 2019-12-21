@@ -15,9 +15,9 @@ class _Each_EventState extends State<Each_Event> {
           const SliverAppBar(
             pinned: true,
             expandedHeight: 300.0,
-            backgroundColor: Colors.purpleAccent,
+            backgroundColor: Color(0xFF006064),
             flexibleSpace: FlexibleSpaceBar(
-              title: Text('NAME OF EACH EVENT'),
+              title: Text('NAME OF EVENT'),
               ),
             ),
             SliverList(
