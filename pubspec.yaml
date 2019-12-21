@@ -27,6 +27,8 @@ flutter:
 
 assets:
   - assets/g.jpeg
+  - assets/bg.jpg
+  - assets/glug.png
 
 fonts:
      - family: BalooBhai-Regular
