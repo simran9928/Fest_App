@@ -22,27 +22,43 @@ void each_event(){
     return Scaffold(
       body: CustomScrollView(
   slivers: <Widget>[
-    const SliverAppBar(
-      pinned: true,
-      expandedHeight: 300.0,
-      backgroundColor: Color(0xFFFFE082),
-      flexibleSpace: FlexibleSpaceBar(
-        title: Text('Type of Event'),
-      ),
-    ),
-    
+    SliverAppBar(
+          pinned: true,
+          expandedHeight: 300.0,
+          backgroundColor: Color(0xFF006064),
+          flexibleSpace: FlexibleSpaceBar(
+            title: const Text('Events List'),
+            background: Stack(fit: StackFit.expand, children: [
+              new Image.network(
+                'https://placekitten.com/200/500',
+                fit: BoxFit.cover,
+              ),
+              const DecoratedBox(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment(0.0, 0.5),
+                  end: Alignment(0.0, 0.0),
+                  colors: <Color>[
+                    Color(0x60000000),
+                    Color(0x00000000),
+                  ],
+                )),
+              ),
+            ]),
+          ),
+        ),
     SliverList(
       delegate: SliverChildListDelegate(
         <Widget>[
-          New_card(each_event,'NAME OF THE EVENT','22/12/2019', Colors.pink[100], Image.asset('assets/bg.jpg',fit: BoxFit.fill,),),
+          New_card(each_event,'NAME OF THE EVENT','22/12/2019', Colors.pink[100], "https://placekitten.com/400/500"),
           SizedBox(
             height: 15.0,
           ),
-          New_card(each_event,'name of each event','22/12/2019', Colors.pink[100], Image.asset('assets/bg.jpg',fit: BoxFit.fill,),),
+          New_card(each_event,'name of each event','22/12/2019', Colors.pink[100], "https://placekitten.com/200/500"),
           SizedBox(
             height: 15.0,
           ),
-          New_card(each_event,'name of each event','22/12/2019', Colors.yellow[100], Image.asset('assets/bg.jpg',fit: BoxFit.fill,),),                
+          New_card(each_event,'name of each event','22/12/2019', Colors.yellow[100], "https://placekitten.com/600/500"),                
           SizedBox(
             height: 15.0,
           ),
@@ -57,7 +73,7 @@ void each_event(){
 
 
 
-New_card(Function each_event, String name_of_event,String date_of_event, Color text_field_color, Image image_of_event)
+New_card(Function each_event, String name_of_event,String date_of_event, Color text_field_color, String image_of_event)
 {
   return 
             Column(
@@ -70,20 +86,13 @@ New_card(Function each_event, String name_of_event,String date_of_event, Color t
                     each_event();
                   },
                   child: Container(
-                    child: Card(
-                      color: Colors.black45,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(border_radius) 
-                      ),
-                      child:Align(
-                        child: Container(
-                          height: 250,
-                          padding: EdgeInsets.all(10),
-                          child: image_of_event,
-                          alignment: Alignment.topCenter,
-                        ),
-                     ),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(image_of_event)
+                      )
                     ),
+                    height: 250,
                   ),
                 ),
                 
